@@ -1,6 +1,6 @@
 <template>
+  <!-- vue3 组件中可以不用根标签 -->
   <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
 </template>
 
 <script>
