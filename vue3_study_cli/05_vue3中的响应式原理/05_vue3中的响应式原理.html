@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 原始数据
+        let person = {
+            name:"richard",
+            age:18,
+        };
+        
+        // 模拟vue2
+        /* let p = {
+            name:"richard",
+            age:18,
+        };
+        Object.defineProperty(p,"name",{
+            // 有人读取时返回的数据
+            get(){
+                console.log("有人提取了信息！")
+                return p.name;
+            },
+
+            // 有人更改的时候的情况
+            set(value){
+                console.log("有人更改了信息！")
+                p.name = value;
+            }
+        });
+        Object.defineProperty(p,"age",{
+            // 有人读取时返回的数据
+            get(){
+                console.log("有人提取了信息！")
+                return person.age;
+            },
+
+            // 有人更改的时候的情况
+            set(value){
+                console.log("有人更改了信息！")
+                person.age = value;
+            }
+        }); */
+
+        let p = new Proxy(person,{}); // 代理原始数据
+    </script>
+    
+</body>
+</html>
