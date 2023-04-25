@@ -1,19 +1,13 @@
 <template>
-
   <h1>姓名：{{ name }}</h1>
   <h1>年龄：{{ age }}</h1>
   <h1>工作{{ job.type }},薪水{{ job.salary }}</h1>
-  <h1>爱好：</h1>
-  <ul>
-    <li v-for="(hobby,index) in hobbies" :key="index">{{ hobby }}</li>
-  </ul>
   <button @click="sayHello">按钮</button>
   <button @click="changeInfo">改数据</button>
-
 </template>
 
 <script>
-import {ref,reactive} from "vue";
+import {ref} from "vue";
 
 
 export default {
@@ -23,19 +17,17 @@ export default {
 
     let name = ref("richard");
     let age = ref(18);
-    let job = reactive({
+    let job = ref({
       type:"前端工程师",
       salary:"10k",
-    });
-    let hobbies = reactive(["喝酒","抽烟","烫头"])
+    })
     
     function changeInfo(){
       name.value = "James";
       age.value = 100;
-      // job.value.type = "financial analyst";
+      job.value.type = "financial analyst";
       console.log(job);
-      job.type = "financial analyst";
-      hobbies.push("美女");
+      console.log("数据改好了~");
     }
 
     function sayHello(){
@@ -48,11 +40,18 @@ export default {
       job,
       sayHello,
       changeInfo,
-      hobbies,
     }
   }
 }
 </script>
 
 <style>
+/* #app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+} */
 </style>
