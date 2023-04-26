@@ -9,12 +9,14 @@
 <body>
     <script>
         // 原始数据
-        let person = {
-            name:"richard",
-            age:18,
-        };
+        // let person = {
+        //     name:"richard",
+        //     age:18,
+        // };
         
         // 模拟vue2
+
+        //#region
         /* let p = {
             name:"richard",
             age:18,
@@ -45,8 +47,23 @@
                 person.age = value;
             }
         }); */
+        //#region
 
-        let p = new Proxy(person,{}); // 代理原始数据
+        let person = {
+            name:"richard",
+            age:18,
+        };
+        let p = new Proxy(person,{
+            get(target,key){
+                console.log(target,key)
+            },
+			set(target,propName,value){
+				target[propName] = value
+			},
+			// deleteProperty(target,propName){
+			// 	// return delete target[propName]
+			// }
+        });
     </script>
     
 </body>
