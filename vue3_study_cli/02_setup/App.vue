@@ -4,8 +4,7 @@
 </template>
 
 <script>
-import {h} from "vue";
-
+import { h } from 'vue';
 
 export default {
   name: 'App',
@@ -13,20 +12,20 @@ export default {
   setup() {
     // let name = "richard";
     // let age = 18;
-    
+
     // function sayHello(){
     //   console.log(`我叫${name},今年${age}岁！`);
     // }
-    
+
     // return {
     //   name,
     //   age,
     //   sayHello,
     // }
 
-    return ()=>h("h1","richard")
-  }
-}
+    return () => h('h1', 'richard');
+  },
+};
 </script>
 
 <style>

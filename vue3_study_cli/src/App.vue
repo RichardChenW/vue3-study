@@ -1,35 +1,21 @@
 <template>
-  <h1>姓名: {{person.name}}</h1>
-  <h1>年龄：{{ person.age }}</h1>
-  <color-block msg="你好啊" name="richard" @hello="showHello">
-    <h1></h1>
-  </color-block>
+  <my-name></my-name>
+  <hr/>
+  <my-sum></my-sum>
 </template>
 
 <script>
-import {ref,reactive} from "vue";
-import ColorBlock from './components/ColorBlock.vue';
-
+import MyName from "./components/MyName.vue";
+import MySum from "./components/MySum.vue";
 
 export default {
   name: 'App',
   components:{
-    ColorBlock
+    MyName,
+    MySum
   },
   setup(){
-    let person = reactive({
-      name:"richard",
-      age:18
-    });
 
-    function showHello(value){
-      alert(`hello${value}`)
-    }
-
-    return {
-      person,
-      showHello
-    }
   }
 }
 </script>
