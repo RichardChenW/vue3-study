@@ -7,6 +7,7 @@ import App from './App.vue'
 // 挂载到 dom 上
 createApp(App).mount('#app')
 
+
 /* //? 测试
 let app = createApp(App)
 app.mount("#app") */
